@@ -13,6 +13,7 @@ Gem::Specification.new do |spec|
   # spec.homepage    = "test"
   spec.license     = "MIT"
   spec.required_ruby_version = ">= 3.2.0"
+  spec.add_development_dependency "debug"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
