@@ -28,7 +28,7 @@ class TestTwoSum < Minitest::Test
   end
 
   def test_two_less_than_nil
-    result = Algoruby::TwoSumLessThan.call([4, 5, 12, 20], 3)
+    result = Algoruby::TwoSumLessThan.call([4, 5, 12, 20], 6)
     assert_nil result
   end
 end
