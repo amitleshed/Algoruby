@@ -22,13 +22,23 @@ class TestTwoSum < Minitest::Test
     assert_equal [2, 15], result
   end
 
-  def test_two_less_than
+  def test_two_sum_less_than
     result = Algoruby::TwoSumLessThan.call([2, 7, 11, 15], 10)
     assert_equal [2, 7], result
   end
 
-  def test_two_less_than_nil
+  def test_two_sum_less_than_nil
     result = Algoruby::TwoSumLessThan.call([4, 5, 12, 20], 6)
+    assert_nil result
+  end
+
+  def test_two_sum_sorted
+    result = Algoruby::TwoSumSorted.call([20, 5, 12, 4], 24)
+    assert_equal [20, 4], result
+  end
+
+  def test_two_sum_sorted_nil
+    result = Algoruby::TwoSumSorted.call([20, 5, 12, 4], 19)
     assert_nil result
   end
 end
