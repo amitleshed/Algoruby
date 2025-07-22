@@ -9,6 +9,7 @@ require "algoruby/two_sum/two_sum_sorted"
 require "algoruby/has_duplicate/has_duplicate"
 require "algoruby/exclude_aggregator/exclude_aggregator"
 require "algoruby/max_subarray/max_subarray"
+require "algoruby/group_anagrams/group_anagrams"
 
 module Algoruby
 end
