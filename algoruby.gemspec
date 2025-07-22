@@ -16,7 +16,7 @@ Gem::Specification.new do |spec|
 
         * Binary Search: Works with numbers, strings, times, and custom objects.
 
-        * Dynamic Programming: Maximum Subarray (Kadane's Algorithm).
+        * Dynamic Programming: Maximum Subarray.
 
         * Generalized Solutions: K-Sum, Exclude Aggregator, and more.
   `
