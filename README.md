@@ -1,7 +1,7 @@
 # Algoruby
 
 Algoruby is a Ruby gem providing ready-to-use, production-friendly algorithmic patterns, including classics like Two Sum, K-Sum, Sliding Window, Binary Search, and more — all wrapped in clean Ruby interfaces.
-run `bin/console`
+run `bin/console` to experiment.
 
 Features
 
@@ -33,10 +33,13 @@ gem install UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
 
 ## Usage
 
+```bash
 require "algoruby"
+```
 
 Examples:
 
+```bash
 Algoruby::GroupAnagrams.call(["bebop", "bobep", "pebop", "epbop", "opbeb", "peobe"])
 => [["bebop", "bobep", "opbeb"], ["pebop", "epbop"], ["peobe"]]
 
@@ -48,6 +51,7 @@ Algoruby::SlidingWindow.each_window([1, 2, 3, 4, 5], 3)
 
 Algoruby::SlidingWindow.aggregate([1, 2, 3, 4, 5], 3) { |w| w.sum }
 => [6, 9, 12]
+```
 
 ## Development
 
