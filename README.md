@@ -20,7 +20,7 @@ Features
 Install the gem and add to the application's Gemfile by executing:
 
 ```bash
-bundle add algoruby
+bundle add 'algoruby'
 ```
 
 If bundler is not being used to manage dependencies, install the gem by executing:
