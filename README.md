@@ -41,16 +41,16 @@ Examples:
 
 ```bash
 Algoruby::GroupAnagrams.call(["bebop", "bobep", "pebop", "epbop", "opbeb", "peobe"])
-=> [["bebop", "bobep", "opbeb"], ["pebop", "epbop"], ["peobe"]]
+#=> [["bebop", "bobep", "opbeb"], ["pebop", "epbop"], ["peobe"]]
 
 Algoruby::BinarySearch.call(["Trane", "Bird", "Dizz", "Bud", "Monk" ], "Dizz")
-=> 2
+#=> 2
 
 Algoruby::SlidingWindow.each_window([1, 2, 3, 4, 5], 3)
-=> [[1, 2, 3], [2, 3, 4], [3, 4, 5]]
+#=> [[1, 2, 3], [2, 3, 4], [3, 4, 5]]
 
 Algoruby::SlidingWindow.aggregate([1, 2, 3, 4, 5], 3) { |w| w.sum }
-=> [6, 9, 12]
+#=> [6, 9, 12]
 ```
 
 ## Development
