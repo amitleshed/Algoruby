@@ -10,10 +10,10 @@ class TestTwoSum < Minitest::Test
   end
 
   def test_has_duplicate_strings
-    result = Algoruby::HasDuplicate.call(['apple', 'banana', 'apple'])
+    result = Algoruby::HasDuplicate.call(['Minor w/ 6 in the bass', 'Half Dim', 'Minor w/ 6 in the bass'])
     assert_equal true, result
 
-    result = Algoruby::HasDuplicate.call(['apple', 'banana', 'orange'])
+    result = Algoruby::HasDuplicate.call(['Minor Major', 'Aug', 'Dim'])
     assert_equal false, result
   end
 
