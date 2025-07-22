@@ -6,6 +6,7 @@ require "algoruby/two_sum/two_sum_closest"
 require "algoruby/two_sum/two_sum_less_than"
 require "algoruby/two_sum/two_sum_sorted"
 require "algoruby/has_duplicate/has_duplicate"
+require "algoruby/exclude_aggregator/exclude_aggregator"
 
 module Algoruby
 end
