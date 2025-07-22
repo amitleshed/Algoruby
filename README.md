@@ -1,6 +1,6 @@
 # Algoruby
 
-Algoruby is a Ruby gem providing ready-to-use, production-friendly algorithmic patterns, including classics like Two Sum, K-Sum, Sliding Window, Binary Search, and more — all wrapped in clean Ruby interfaces.
+Algoruby is a must-have toolbelt for tackling day-to-day Ruby on Rails scenarios with minimum stress and maximum performance. It provides ready-to-use, production-grade algorithmic patterns — including Two Sum, K-Sum, Sliding Window, Binary Search, and more — all designed to simplify complex tasks and boost developer productivity.
 run `bin/console` to experiment.
 
 Features
