@@ -1,5 +1,4 @@
 require "test_helper"
-require "debug"
 
 class TestKsum < Minitest::Test
   def test_3_sum

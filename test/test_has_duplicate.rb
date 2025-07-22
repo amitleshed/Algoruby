@@ -1,5 +1,4 @@
 require "test_helper"
-require "debug"
 
 class TestTwoSum < Minitest::Test
   def test_has_duplicate_nums

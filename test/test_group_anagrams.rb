@@ -1,5 +1,4 @@
 require "test_helper"
-require "debug"
 
 class TestGroupAnaframs < Minitest::Test
   def test_group_anagrams

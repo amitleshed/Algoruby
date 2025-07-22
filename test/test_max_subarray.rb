@@ -1,5 +1,4 @@
 require "test_helper"
-require "debug"
 
 class TestMaxSubarray < Minitest::Test
   def test_two_sum_finds_indices
