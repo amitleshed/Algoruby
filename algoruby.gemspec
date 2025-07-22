@@ -8,9 +8,20 @@ Gem::Specification.new do |spec|
   spec.authors = ["Amit Leshed"]
   spec.email   = ["amitleshed@icloud.com"]
 
-  spec.summary     = "test"
-  spec.description = "test"
-  # spec.homepage    = "test"
+  spec.summary     = "Algoruby is a Ruby gem providing ready-to-use, production-friendly algorithmic patterns, including classics like Two Sum, K-Sum, Sliding Window, Binary Search, and more — all wrapped in clean Ruby interfaces."
+  spec.description = `
+        * Array & Hashing Patterns: Two Sum, Two Sum Closest, Group Anagrams.
+
+        * Sliding Window: Rolling sums, maximums, substring problems.
+
+        * Binary Search: Works with numbers, strings, times, and custom objects.
+
+        * Dynamic Programming: Maximum Subarray (Kadane's Algorithm).
+
+        * Generalized Solutions: K-Sum, Exclude Aggregator, and more.
+  `
+
+  spec.homepage    = "https://github.com/amitleshed/Algoruby"
   spec.license     = "MIT"
   spec.required_ruby_version = ">= 3.2.0"
   spec.add_development_dependency "debug"
