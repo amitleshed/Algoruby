@@ -1,8 +1,19 @@
 # Algoruby
 
-TODO: Delete this and the text below, and describe your gem
+Algoruby is a Ruby gem providing ready-to-use, production-friendly algorithmic patterns, including classics like Two Sum, K-Sum, Sliding Window, Binary Search, and more — all wrapped in clean Ruby interfaces.
+run `bin/console`
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/algoruby`. To experiment with that code, run `bin/console` for an interactive prompt.
+Features
+
+    * Array & Hashing Patterns: Two Sum, Two Sum Closest, Group Anagrams.
+
+    * Sliding Window: Rolling sums, maximums, substring problems.
+
+    * Binary Search: Works with numbers, strings, times, and custom objects.
+
+    * Dynamic Programming: Maximum Subarray (Kadane's Algorithm).
+
+    * Generalized Solutions: K-Sum, Exclude Aggregator, and more.
 
 ## Installation
 
@@ -22,7 +33,21 @@ gem install UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
 
 ## Usage
 
-TODO: Write usage instructions here
+require "algoruby"
+
+Examples:
+
+Algoruby::GroupAnagrams.call(["bebop", "bobep", "pebop", "epbop", "opbeb", "peobe"])
+=> [["bebop", "bobep", "opbeb"], ["pebop", "epbop"], ["peobe"]]
+
+Algoruby::BinarySearch.call(["Trane", "Bird", "Dizz", "Bud", "Monk" ], "Dizz")
+=> 2
+
+Algoruby::SlidingWindow.each_window([1, 2, 3, 4, 5], 3)
+=> [[1, 2, 3], [2, 3, 4], [3, 4, 5]]
+
+Algoruby::SlidingWindow.aggregate([1, 2, 3, 4, 5], 3) { |w| w.sum }
+=> [6, 9, 12]
 
 ## Development
 
@@ -32,7 +57,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/algoruby. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/algoruby/blob/main/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/amitleshed/algoruby. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/amitleshed/algoruby/blob/main/CODE_OF_CONDUCT.md).
 
 ## License
 
