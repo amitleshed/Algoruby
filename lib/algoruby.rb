@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "algoruby/version"
+require "algoruby/ksum/ksum"
 require "algoruby/two_sum/two_sum"
 require "algoruby/two_sum/two_sum_closest"
 require "algoruby/two_sum/two_sum_less_than"
