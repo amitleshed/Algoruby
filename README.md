@@ -37,8 +37,8 @@ require "algoruby"
 
 Examples:
 
+## **Sliding Windows** Sliding Windows
 ```bash
-Sliding Windows
 
 Algoruby::SlidingWindow.each_window([1, 2, 3, 4, 5], 3)
 #=> [[1, 2, 3], [2, 3, 4], [3, 4, 5]]
@@ -60,13 +60,14 @@ Algoruby::SlidingWindow.map_windows("hello".chars, 2) { |w| w.join }
 # => ["he", "el", "ll", "lo"]
 ```
 
+## **Group Anagrams** Sliding Windows
 ```bash
-Group Anagrams
 
 Algoruby::GroupAnagrams.call(["bebop", "bobep", "pebop", "epbop", "opbeb", "peobe"])
 #=> [["bebop", "bobep", "opbeb"], ["pebop", "epbop"], ["peobe"]]
 ```
 
+## **Binary Search** Sliding Windows
 ```bash
 Binary Search
 
