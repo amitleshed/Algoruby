@@ -38,6 +38,7 @@ require "algoruby"
 Examples:
 
 ```bash
+Sliding Windows
 
 Algoruby::SlidingWindow.each_window([1, 2, 3, 4, 5], 3)
 #=> [[1, 2, 3], [2, 3, 4], [3, 4, 5]]
@@ -45,8 +46,29 @@ Algoruby::SlidingWindow.each_window([1, 2, 3, 4, 5], 3)
 Algoruby::SlidingWindow.aggregate([1, 2, 3, 4, 5], 3) { |w| w.sum }
 #=> [6, 9, 12]
 
+# Numbers
+Algoruby::SlidingWindow.map_windows([1,2,3,4,5], 3) { |w| w.sum }
+# => [6, 9, 12]
+
+# Hashes
+items = [{price: 10}, {price: 7}, {price: 3}, {price: 12}]
+Algoruby::SlidingWindow.map_windows(items, 2) { |w| w.sum { |h| h[:price] } }
+# => [17, 10, 15]
+
+# Strings
+Algoruby::SlidingWindow.map_windows("hello".chars, 2) { |w| w.join }
+# => ["he", "el", "ll", "lo"]
+```
+
+```bash
+Group Anagrams
+
 Algoruby::GroupAnagrams.call(["bebop", "bobep", "pebop", "epbop", "opbeb", "peobe"])
 #=> [["bebop", "bobep", "opbeb"], ["pebop", "epbop"], ["peobe"]]
+```
+
+```bash
+Binary Search
 
 Algoruby::BinarySearch.call(["Trane", "Bird", "Dizz", "Bud", "Monk" ], "Dizz")
 #=> 2
