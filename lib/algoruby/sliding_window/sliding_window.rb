@@ -36,5 +36,9 @@ module Algoruby
 
       results
     end
+
+    def self.map_windows(enum, size, &block)
+      enum.each_cons(size).map(&block)
+    end
   end
 end
