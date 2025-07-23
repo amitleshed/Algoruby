@@ -1,28 +1,37 @@
-require "test_helper"
+require_relative "./test_helper"
 
 class TestSlidingWindow < Minitest::Test
-  def test_sliding_window_iterate
-    result = Algoruby::SlidingWindow.each_window([1, 2, 3, 4, 5], 3)
-    assert_equal [[1, 2, 3], [2, 3, 4], [3, 4, 5]], result
+  def test_max_numeric
+    nums = [1, 3, -1, -3, 5, 3, 6, 7]
+    assert_equal [3, 3, 5, 5, 6, 7], Algoruby::SlidingWindow.max(nums, 3)
   end
 
-  def test_sliding_window_aggregate
-    result = Algoruby::SlidingWindow.aggregate([1, 2, 3, 4, 5], 3) { |w| w.sum }
-    assert_equal [6, 9, 12], result
+  def test_min_numeric
+    nums = [1, 3, -1, -3, 5, 3, 6, 7]
+    assert_equal [-1, -3, -3, -3, 3, 3], Algoruby::SlidingWindow.min(nums, 3)
   end
 
-  def test_sliding_window_map
-    # Numbers
-    result = Algoruby::SlidingWindow.map_windows([1,2,3,4,5], 3) { |w| w.sum }
-    assert_equal [6, 9, 12], result
+  def test_max_with_objects_and_key
+    people = [{ age: 30 }, { age: 25 }, { age: 33 }, { age: 29 }]
+    result = Algoruby::SlidingWindow.max(people, 2, by: ->(p) { p[:age] })
+    assert_equal [{ age: 30 }, { age: 33 }, { age: 33 }], result
+  end
 
-    # Hashes (sum prices)
-    items = [{price: 10}, {price: 7}, {price: 3}, {price: 12}]
-    result = Algoruby::SlidingWindow.map_windows(items, 2) { |w| w.sum { |h| h[:price] } }
-    assert_equal [17, 10, 15], result
+  def test_min_with_objects_and_key
+    people = [{ age: 30 }, { age: 25 }, { age: 33 }, { age: 29 }]
+    result = Algoruby::SlidingWindow.min(people, 2, by: ->(p) { p[:age] })
+    assert_equal [{ age: 25 }, { age: 25 }, { age: 29 }], result
+  end
 
-    # Strings (char-count windows)
-    result = Algoruby::SlidingWindow.map_windows("hello".chars, 2) { |w| w.join }
-    assert_equal ["he", "el", "ll", "lo"], result
+  def test_window_size_too_large_or_invalid
+    nums = [1, 2, 3]
+    assert_equal [], Algoruby::SlidingWindow.max(nums, 0)
+    assert_equal [], Algoruby::SlidingWindow.max(nums, 5)
+    assert_equal [], Algoruby::SlidingWindow.min(nums, -1)
+  end
+
+  def test_enum_input_not_array
+    enum = (1..7)
+    assert_equal [3, 4, 5, 6, 7], Algoruby::SlidingWindow.max(enum, 3)
   end
 end

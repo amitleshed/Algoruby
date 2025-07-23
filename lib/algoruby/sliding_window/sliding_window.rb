@@ -1,44 +1,45 @@
+# frozen_string_literal: true
+
 module Algoruby
-  class SlidingWindow
-    # Returns every contiguous window of size k
-    #
-    # @param array [Array] the array to iterate
-    # @param k [Integer] size of the window
-    # @return [Array<Array>] all windows
-    def self.each_window(array, k)
-      return [] if k > array.size || k <= 0
+  module SlidingWindow
+    def self.max(sequence, window_size, by: nil)
+      key     = by || ->(x) { x }
+      values  = sequence.to_a
+      return [] if window_size <= 0 || values.size < window_size
 
-      result = []
-      (0..array.size - k).each do |i|
-        window = array[i, k]
-        if block_given?
-          yield window
-        else
-          result << window
+      candidate_indexes = []
+      maxima            = []
+
+      values.each_with_index do |value, index|
+        while candidate_indexes.any? && key.call(values[candidate_indexes.last]) <= key.call(value)
+          candidate_indexes.pop
         end
+        candidate_indexes << index
+        candidate_indexes.shift if candidate_indexes.first <= index - window_size
+        maxima << values[candidate_indexes.first] if index >= window_size - 1
       end
 
-      result unless block_given?
+      maxima
     end
 
-    # Computes an aggregate across all windows
-    #
-    # @param array [Array]
-    # @param k [Integer]
-    # @yield [window] block to compute value for each window
-    # @return [Array] results for all windows
-    def self.aggregate(array, k)
-      results = []
-      
-      each_window(array, k) do |window|
-        results << yield(window)
+    def self.min(sequence, window_size, by: nil)
+      key     = by || ->(x) { x }
+      values  = sequence.to_a
+      return [] if window_size <= 0 || values.size < window_size
+
+      candidate_indexes = []
+      minima            = []
+
+      values.each_with_index do |value, index|
+        while candidate_indexes.any? && key.call(values[candidate_indexes.last]) >= key.call(value)
+          candidate_indexes.pop
+        end
+        candidate_indexes << index
+        candidate_indexes.shift if candidate_indexes.first <= index - window_size
+        minima << values[candidate_indexes.first] if index >= window_size - 1
       end
 
-      results
-    end
-
-    def self.map_windows(enum, size, &block)
-      enum.each_cons(size).map(&block)
+      minima
     end
   end
 end
