@@ -41,14 +41,14 @@ Examples:
 Algoruby::GroupAnagrams.call(["bebop", "bobep", "pebop", "epbop", "opbeb", "peobe"])
 #=> [["bebop", "bobep", "opbeb"], ["pebop", "epbop"], ["peobe"]]
 
-Algoruby::BinarySearch.call(["Trane", "Bird", "Dizz", "Bud", "Monk" ], "Dizz")
-#=> 2
-
 Algoruby::SlidingWindow.each_window([1, 2, 3, 4, 5], 3)
 #=> [[1, 2, 3], [2, 3, 4], [3, 4, 5]]
 
 Algoruby::SlidingWindow.aggregate([1, 2, 3, 4, 5], 3) { |w| w.sum }
 #=> [6, 9, 12]
+
+Algoruby::BinarySearch.call(["Trane", "Bird", "Dizz", "Bud", "Monk" ], "Dizz")
+#=> 2
 
 arr = [1, 3, 5, 7, 9]
 
