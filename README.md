@@ -49,6 +49,14 @@ Algoruby::SlidingWindow.each_window([1, 2, 3, 4, 5], 3)
 
 Algoruby::SlidingWindow.aggregate([1, 2, 3, 4, 5], 3) { |w| w.sum }
 #=> [6, 9, 12]
+
+arr = [1, 3, 5, 7, 9]
+
+Algoruby::BinarySearch.first_greater(arr, 5)
+# => 3 (arr[3] == 7)
+
+Algoruby::BinarySearch.last_less_or_equal(arr, 5)
+# => 2 (arr[2] == 5)
 ```
 
 ## Contributing
