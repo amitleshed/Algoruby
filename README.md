@@ -44,6 +44,9 @@ Binary Search
 Algoruby::BinarySearch.call(["Trane", "Bird", "Dizz", "Bud", "Monk" ], "Dizz")
 #=> 2
 
+
+
+
 arr = [1, 3, 5, 7, 9]
 
 Algoruby::BinarySearch.first_greater(arr, 5)
@@ -51,6 +54,39 @@ Algoruby::BinarySearch.first_greater(arr, 5)
 
 Algoruby::BinarySearch.last_less_or_equal(arr, 5)
 # => 2 (arr[2] == 5)
+```
+
+## **Anagrams**
+```bash
+events  = [:create, :notify, :update, :foo, :bar, :update, :create, :notify]
+pattern = [:create, :update, :notify]
+
+Algoruby::AnagramScan.indices(events, pattern)
+# => [0, 5]
+
+
+
+haystack = %w[A b C a B c]
+needle   = %w[a b c]
+
+Algoruby::AnagramScan.indices(haystack, needle, key: ->(ch) { ch.downcase })
+# => [0, 1, 2, 3]
+
+```
+
+## **Sliding Window**
+```bash
+people = [{ age: 30 }, { age: 25 }, { age: 33 }, { age: 29 }]
+
+Algoruby::SlidingWindow.max(people, 2, by: ->(p) { p[:age] })
+# => [{ age: 30 }, { age: 33 }, { age: 33 }]
+
+
+
+people = [{ age: 30 }, { age: 25 }, { age: 33 }, { age: 29 }]
+
+Algoruby::SlidingWindow.min(people, 2, by: ->(p) { p[:age] })
+# => [{ age: 25 }, { age: 25 }, { age: 29 }]
 ```
 
 ## Contributing
