@@ -16,4 +16,14 @@ class TestBinarySearch < Minitest::Test
 
     assert_equal 2, result
   end
+
+  def test_binary_search_scenarios
+    arr = [1, 3, 5, 7, 9]
+
+    result = Algoruby::BinarySearch.first_greater(arr, 5)
+    assert_equal 3, result
+
+    result = Algoruby::BinarySearch.last_less_or_equal(arr, 5)
+    assert_equal 2, result
+  end
 end
